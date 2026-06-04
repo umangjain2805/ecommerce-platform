@@ -2,10 +2,15 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 function Navbar() {
-  return (
-    const { cartItems } =useContext(CartContext);
-console.log(cartItems);
+  const { cartItems } = useContext(CartContext);
 
+console.log(cartItems);
+ const totalItems = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
+
+  return (
     <nav className="bg-white shadow-md px-8 py-4 flex items-center justify-between">
       
       {/* Logo */}
@@ -38,7 +43,7 @@ console.log(cartItems);
             to="/cart"
             className="hover:text-blue-600 transition duration-300"
           >
-            Cart
+            Cart ({totalItems})
           </Link>
         </li>
 
