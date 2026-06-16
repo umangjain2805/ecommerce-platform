@@ -38,7 +38,7 @@ function ProductDetails() {
         <img
           src={product.image}
           alt={product.title}
-          className="w-full rounded-2xl shadow-lg h-500px object-cover"
+          className="w-full rounded-2xl shadow-lg h-[500px] object-cover"
         />
 
       </div>
