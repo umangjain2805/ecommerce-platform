@@ -20,11 +20,19 @@ const getProductById = (req, res) => {
   res.json(product);
 };
 
-module.exports = {
-  getProducts,
-  getProductById,
+const createProduct = (req, res) => {
+
+  console.log(req.body);
+
+  res.status(201).json({
+    message: "Product Created",
+    product: req.body,
+  });
+
 };
+
 module.exports = {
   getProducts,
   getProductById,
+  createProduct,
 };
