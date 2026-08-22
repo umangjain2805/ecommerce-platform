@@ -20,9 +20,13 @@ const app = express();
 
 // Connect MongoDB Database
 // (Can be commented out until MongoDB is working)
-// connectDB();
+ connectDB();
 
 // Middleware
+// Enable CORS
+const cors = require("cors");
+app.use(cors());
+
 // Logs every incoming request
 app.use(loggerMiddleware);
 
